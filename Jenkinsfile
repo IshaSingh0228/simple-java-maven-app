@@ -6,16 +6,25 @@ pipeline{
     }
   }
   stages {
-    stage('Build'){
+    stage('Maven-Clean'){
       steps{
-        sh 'mvn -B -DskipTests clean package'
+        sh 'mvn clean'
       }
-     }
-    stage('Test'){
+    }
+    stage('Maven-Compile'){
+      steps{
+        sh 'mvn compile'
+      }
+    }
+    stage('Maven_Test'){
       steps{
         sh 'mvn test'
       }
-      
-  }
+    }
+    stage('Maven-Package'){
+      steps{
+        sh 'mvn package'
+      }
+    }
   }
 }
