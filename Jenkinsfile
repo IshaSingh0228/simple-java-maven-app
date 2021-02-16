@@ -27,7 +27,7 @@ pipeline{
         retry(3){
         sh 'mvn package-'
         }
-        timeout(time:3,unit:"MINUTES"){
+        timeout(time:1,unit: "SECONDS"){
           echo "Rebuiding the package"
           sh 'mvn package'
         }
