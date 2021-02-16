@@ -22,11 +22,13 @@ pipeline{
       }
     }
     stage('Maven-Package'){
-      retry(2){
+      
       steps{
+        retry(2){
         sh 'mvn package-'
+        }
       }
-    }
+
     }
   }
 }
