@@ -22,16 +22,15 @@ pipeline{
       }
     }
     stage('Maven-Package'){
-      
+     try{ 
       steps{
-        retry(3){
-        sh 'mvn package-'
-        }
-        timeout(time:1,unit: "SECONDS"){
-          echo "Rebuiding the package"
-          sh 'mvn package'
-        }
+        sh 'mvn package-'  
       }
+     }catch(Exception e){
+       echo "Build failed"
+       echo "building after failure"
+       sh 'mvn package'
+     }
 
     }
   }
