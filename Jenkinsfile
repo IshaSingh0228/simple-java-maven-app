@@ -22,17 +22,11 @@ pipeline{
       }
     }
     stage('Maven-Package'){
-      try{
+      retry(2){
       steps{
         sh 'mvn package-'
       }
-      }catch(error){
-        echo "first build failed"
-        retry(2){
-          sh 'mvn package'
-
-        }
-      }
+    }
     }
   }
 }
