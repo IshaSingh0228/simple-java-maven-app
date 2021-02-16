@@ -7,7 +7,7 @@ public class App
 {
 
     private final String message = "Hello World!";
-    //maven app for jenkins testing
+    //maven app for jenkins testing with sonar cude
     public App() {}
 
     public static void main(String[] args) {
