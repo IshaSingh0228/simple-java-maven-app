@@ -24,8 +24,12 @@ pipeline{
     stage('Maven-Package'){
       
       steps{
-        retry(2){
+        retry(3){
         sh 'mvn package-'
+        }
+        timeout(time:3,unit:"MINUTES"){
+          echo "Rebuiding the package"
+          sh 'mvn package'
         }
       }
 
