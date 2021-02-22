@@ -16,9 +16,12 @@
     </dependency>
   </dependencies>
   <properties>
-    <sonar.projectKey>java-maven-sujjad</sonar.projectKey>
+<!--     <sonar.projectKey>java-maven-sujjad</sonar.projectKey>
     <sonar.organization>sujjad</sonar.organization>
-    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url> -->
+  
+     <maven.compiler.source>1.8</maven.compiler.source>
+     <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
   <build>
     <plugins>
